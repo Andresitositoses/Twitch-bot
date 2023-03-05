@@ -2,10 +2,14 @@ import twitchio
 from twitchio.ext import commands
 import re
 from configparser import ConfigParser
+import pathlib
+
+# Get bot.py's father path
+path = pathlib.Path(__file__).parent.resolve().__str__()
 
 # Get the account config from config.ini
 config = ConfigParser()
-config.read("config.ini")
+config.read(path + "\config.ini")
 config_fields = config["ANDRESITOSITOSES_ACCOUNT"]
 
 # IMPORTANTE: el token se genera en este enlace: https://twitchapps.com/tmi/
